@@ -1,0 +1,36 @@
+CREATE TABLE IF NOT EXISTS Employees (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Department VARCHAR(50),
+    Position VARCHAR(50),
+    Salary DECIMAL(10,2),
+    HireDate DATE
+);
+
+INSERT INTO Employees (EmployeeID, FirstName, LastName, Department, Position, Salary, HireDate)
+VALUES
+(1, 'Amit', 'Sharma', 'IT', 'Developer', 60000, '2021-03-15'),
+(2, 'Priya', 'Verma', 'HR', 'Manager', 75000, '2019-07-01'),
+(3, 'Ravi', 'Kumar', 'Finance', 'Analyst', 55000, '2020-01-20'),
+(4, 'Sneha', 'Patel', 'IT', 'Tester', 50000, '2022-06-10'),
+(5, 'Arjun', 'Singh', 'Sales', 'Executive', 45000, '2023-02-05');
+
+SELECT * FROM Employees;
+
+SELECT * FROM Employees
+ORDER BY Salary DESC;
+
+SELECT * FROM Employees
+WHERE Department = 'IT';
+
+SELECT FirstName, LastName, Salary
+FROM Employees
+WHERE Salary > 55000;
+
+UPDATE Employees
+SET Salary = 65000
+WHERE EmployeeID = 1;
+
+DELETE FROM Employees
+WHERE EmployeeID = 5;
